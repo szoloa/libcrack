@@ -12,7 +12,7 @@ class Main:
         cookies = {
             'PHPSESSID':'jt5h2vgdjdriabknpgjkmmi0h4',
             'PHPSESSID_NS_Sig':'oenCV6mfw3olvQ2-',
-            'redirect_url':'%/web/seat2/area/5/day/2023-2-19'
+            'redirect_url':'%/web/seat2/area/5/day/{}'.format(time_url.getDay())
         }
         headers = {
                     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36 Edg/110.0.1587.49',
@@ -32,5 +32,7 @@ class Main:
         return self.__Request()
 if __name__ == '__main__':
     text_ = Main(time_url.getTime()).run()
-    print(JsonRinse.rinse(text_))
+    #print(JsonRinse.rinse(text_))
     #print(Rinse(text_).getStatus())
+    with open('./data/txt/{}-{}'.format(time_url.getDay(),time_url.getTime()),'w',encoding='utf-8') as f:
+        f.write(str(JsonRinse.rinse(text_)))
