@@ -11,6 +11,8 @@ class Rinse:
             return None
         dict = {}
         html_soup = soup(self.text,features='lxml')
+        if html_soup.find(class_='floor-area floor-area-14') == None:
+            return html_soup.get_text()
         for i in html_soup.find(class_='floor-area floor-area-14').find_all(class_='seat using-icon'):
             try:
                 status =  re.findall(r'''"status_name":"(.*?)"''',str(i.get_text),0)[0]
