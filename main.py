@@ -27,5 +27,5 @@ class Main:
     def run(self):
         return self.__Request()
 if __name__ == '__main__':
-    text = Main('http://zwyy.lib.ctgu.edu.cn/web/seat3?area=14&segment=1316670&day=2023-2-19&startTime=09:43&endTime=22:00').run()
+    text = Main('http://zwyy.lib.ctgu.edu.cn/web/seat3?area=14&segment=1316670&day=2023-2-19&startTime=10:10&endTime=22:00').run()
     print(Rinse(text).getStatus())
