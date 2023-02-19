@@ -22,5 +22,4 @@ class Rinse:
                 print(i,'失败')
         return dict
     def getStatus(self):
-        
         return self.__handle()
