@@ -23,7 +23,7 @@ class Main:
             print('第', i - 4, '次尝试')
             try:
                 r = requests.get(self.url, headers=headers, cookies=cookies, timeout=3000)
-                print(r.text)
+                # print(r.text)
                 if r.status_code == 200:
                     return r.text
                 else:
