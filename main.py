@@ -19,7 +19,7 @@ class Main:
             'Referer': time_url.getUrl('/web/seat3'),
             'X-Requested-With': 'XMLHttpRequest'
         }
-        for i in range(6, 15):
+        for i in range(4, 17):
             print('第', i - 4, '次尝试')
             try:
                 r = requests.get(self.url, headers=headers, cookies=cookies, timeout=3000)
@@ -32,13 +32,13 @@ class Main:
             except:
                 print('error in requests')
                 continue
-            return None
+        return None
 
     def run(self):
         return self.__Request()
 
 
-if __name__ == '__main__':
+def getData():
     text_ = Main(time_url.getUrl()).run()
     # print(JsonRinse.rinse(text_))
     # print(Rinse(text_).getStatus())
